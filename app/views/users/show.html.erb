@@ -1,18 +1,22 @@
-<div id="show_base">
-	<%= render "base" %>
+<%= render  "base" %>
+<div id="individual_show_nav">
+  <%= render :partial => "individual_show_nav" %>
 </div>
-<div id="show_left">
-   <%= render "left" %>
+<div id="left">
+  <%= render :partial => "individual_left_sidebar" %>
 </div>
-<div id="show_middle">
-  <% if is_current_user? %>
-    <%= render "news_input_box" %>
-  <% else %>
-    <%= render "messeges_box" %>
-  <% end %>
-  <%= render_cell :user, :owner_news, :user => @user %>
-  <%=  render_cell :messege, :show_messeges , :user => @user %> 
+<div id="middle">
+  <div id="liuyanban">
+    <%= render "users/tools/messeges_box" %>
+  </div>
+  <div id="haoyouxinxianshi">
+   <%= render_cell :user, :owner_news, :user => @user %>
+  </div>
+  <div id="haoyouliuyan">
+    
+    <%= render_cell :messege, :show_messeges , :user => @user %> 
+  </div>
 </div>
-<div id="show_right">
-  <%= render "right" %> 
+<div id="right">
+  <%= render :partial => "individual_right_toolbar" %>
 </div>

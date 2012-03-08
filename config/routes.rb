@@ -7,7 +7,7 @@ SimpleFacebookTest::Application.routes.draw do
     resources :articles
     member do
       get :friends
-      get :news
+      get :home 
     end
   end
   resources :friendships, :only => [:create, :destroy] do 

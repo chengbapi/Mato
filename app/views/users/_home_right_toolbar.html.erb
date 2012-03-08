@@ -1,4 +1,7 @@
-<% if is_current_user? %>
+<div id="rencent_visitors_toolbar">
   <%= render_cell :user , :recent_visitor, :user => current_user %>
+</div>
+<div id="recommended_user_toolbar">
   <%= render_cell :user , :recommended_users, :current_user => current_user %>
-<% end %>
+</div>
+

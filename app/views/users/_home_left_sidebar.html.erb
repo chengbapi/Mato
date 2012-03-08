@@ -1,0 +1,31 @@
+<div id="home_user_left_sidebar">
+  <div id="avator">
+    
+  
+  </div>
+
+  <div id="first_columns">
+    <div id="class_first">
+      
+      <ul>
+         <li><%= link_to("新鲜事",home_user_path(@user)) %></li>
+         <li><%= link_to("日志",user_articles_path(@user)) %></li>
+         <li><%= link_to("留言",user_messeges_path(@user)) %></li>
+         <li><%= link_to("相册",home_user_path(@user))%></li>
+      </ul> 
+    </div>
+    <div id="class_second">
+      
+   </div>
+
+  </div>
+
+  <% if current_user.friend_with?(@user) %>
+    <div id="mygroups_columns">
+      <%= link_to "解除好友关系", friendship_path(@user), :method => :delete  %>
+
+    </div>   
+  <% end %>
+ 
+  
+</div>

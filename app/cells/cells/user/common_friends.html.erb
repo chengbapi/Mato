@@ -1,0 +1,13 @@
+<div id="common_friends">
+  <h2 id="commond">共同好友</h2>
+  <ul class="recommend">
+    <% @common_friends.each do |user| %>
+      <li>
+           <ul class="inside recommend">
+             <li>touxiang</li>
+             <li><%= user.name  %></li>
+           </ul>
+      </li>
+      <% end %>
+  </ul>
+</div>

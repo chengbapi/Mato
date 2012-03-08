@@ -1,0 +1,14 @@
+<div class="news box all">
+    <h5>
+      好友状态
+    </h5>
+    <% @feed_news.each do |news| %>
+      <div class="user news content">
+        <%= news.user.name %> : <%= news.content %>
+        <h6><%= "发布于#{distance_of_time_in_words(news.created_at,Time.now)}" %></h6>
+      </div>
+      <div class="user news comments">
+
+      </div>
+    <% end %>
+</div>

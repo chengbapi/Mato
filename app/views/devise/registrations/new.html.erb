@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta charset="utf-8">
   <%=content_tag 'title',"马头网|注册"%>
   <%= stylesheet_link_tag    "sign_up" %>
   <%= javascript_include_tag "application" %>
@@ -8,6 +9,10 @@
   <meta name="description" content="注册"/>
 </head>
 <body>
+  <div id="flash">
+    <%= render :partial => "shared/flash", :locals => {:flash => flash} %>
+    
+  </div>
   <div class="topbar">
         <h1>
           <a href="/"> 马头网</a>
@@ -35,6 +40,8 @@
 
    <%= f.submit "提交" %>
 <% end %>
-
+  <footer>
+    <%= render :partial => "layouts/footer" %>
+  </footer>
 </body>
 </html>

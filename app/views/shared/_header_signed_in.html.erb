@@ -1,0 +1,20 @@
+<div id="banner_top_bar">
+   <div id="logo_text">
+     <h4>mato</h4>
+   </div>
+    <%= render :partial => "shared/search" %>
+
+    <div id="header_click">
+      <div id="header_click_left">
+      <ul class="secondary-nav">
+          <li><%= link_to("首页",root_path) %></li>
+          <li><%= link_to("个人主页",user_path(current_user)) %></li>
+          <li><%= link_to("好友",friends_user_path(current_user)) %></li>
+          <li><%= link_to("提醒", notifications_path) %></li>
+        </ul>
+      </div>
+      <div id="header_click_right">
+        <%= render :partial => "shared/header_dropdown_menu" %>
+      </div>
+           </div>
+</div>

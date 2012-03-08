@@ -1,0 +1,7 @@
+<div id="common_or_special_friends">
+  <% if not is_current_user?  %>
+    <%= render_cell :user, :common_friends, :user => @user, :current_user => current_user %>
+  <% else %>
+    <%= render_cell :user, :special_friends, :user => @user  %>  
+  <% end %>
+</div>

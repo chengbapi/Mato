@@ -1,0 +1,28 @@
+<div id="individual_homepage_nav">
+  
+    <h1 class="user name"><%= @user.name %></h1>
+    <p>
+      <%= show_last_news %>
+    </p>
+
+    <div class="secondary nav">
+      <ul>
+        <li><%= link_to("个人主页",user_path(@user)) %></li>
+        <li>资料</li>
+       <li><%= link_to("日志",user_articles_path(@user)) %></li>
+       <li><%= link_to("留言",user_messeges_path(@user)) %></li>
+    
+      </ul>
+    </div>
+
+    <div id="individual_webpath">
+       <p>
+        个人网址 ： <%= user_url(@user) %>
+      </p>
+    </div>
+    <div class="friends_button">
+      <% if not current_user.friend_with?(@user) %>
+          <%= add_friend_button @user %>
+      <% end %>
+    </div>
+  </div>
