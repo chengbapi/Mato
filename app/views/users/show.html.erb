@@ -2,10 +2,10 @@
 <div id="individual_show_nav">
   <%= render :partial => "individual_show_nav" %>
 </div>
-<div id="left">
+<div id="show_left">
   <%= render :partial => "individual_left_sidebar" %>
 </div>
-<div id="middle">
+<div id="show_middle">
   <div id="liuyanban">
     <%= render "users/tools/messeges_box" %>
   </div>
@@ -17,6 +17,6 @@
     <%= render_cell :messege, :show_messeges , :user => @user %> 
   </div>
 </div>
-<div id="right">
+<div id="show_right">
   <%= render :partial => "individual_right_toolbar" %>
 </div>

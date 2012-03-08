@@ -13,10 +13,10 @@
   <%= yield :script %>
 </head>
 <body>
-  <header>
+  <div class="topbar">
     <%= render :partial => "shared/header" %>   
-  </header>
-  <nav id="topbar">
+  </div>
+  <nav id="toolbar">
     <%= yield :toolbar %>
   </nav>
   <div class="flash">

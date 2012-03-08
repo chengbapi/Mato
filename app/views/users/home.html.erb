@@ -1,8 +1,8 @@
 <%= render "base" %>
-<div class="left">
+<div id="home_left">
   <%= render :partial => "home_left_sidebar"%>
 </div>
-<div class="middle">
+<div id="home_middle">
   <div id="news_input_box">
     <%= render  "users/tools/news_input_box" %>
   </div>
@@ -10,7 +10,7 @@
     <%=render_cell :user, :recent_news, :user => current_user %>
   </div>
 </div>
-<div class="right">
+<div id="home_right">
   <%= render "home_right_toolbar" %>
 </div>
 
