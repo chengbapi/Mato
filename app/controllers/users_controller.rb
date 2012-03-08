@@ -21,16 +21,20 @@ class UsersController < ApplicationController
   end
 
   def news
-   if current_user == User.find(params[:id])
-     @user = current_user
-     @message = Messege.new(:content => "对朋友说点什么吧")
-     @news = News.new
-     set_page_attribute("新鲜事","新鲜事")
-   else
-     redirect_to :action => :show
-   end
+    #这个news是个人主页下的news
+    @user = User.find(params[:id])
+    @news = @user.news
   end
 
-  def index
+  def home
+    #这里的news是首页里面的news
+    if current_user == User.find(params[:id])
+       @user = current_user
+       @message = Messege.new(:content => "对朋友说点什么吧")
+       @news = News.new
+       set_page_attribute("新鲜事","新鲜事")
+     else
+       redirect_to :action => :show
+     end
   end
 end
