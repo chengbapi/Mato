@@ -1,0 +1,9 @@
+<% content_for :style do %>
+  <%# 在这里加入你要额外加入的css,css应该尽量在页面头加载 %>
+   <%= stylesheet_link_tag "users"  %>
+<% end %>
+<% content_for :script do  %>
+   <%# 在这里加入你需要额外加入的javscript,js脚本应该尽量在页面尾加载  %>
+   <%= javascript_include_tag "users" %>
+<% end %>
+ 

@@ -1,0 +1,11 @@
+<%= render :partial => "base" %>
+<h1>留言板</h1>
+<div id="messeges">
+  <ul>
+   <% @messeges.each do |messege|  %>
+     <li>  <%=user_tag(messege.user)%> 说: <%= messege.content %></li>
+     <li><%= link_to "回复此条",root_path  %></li>
+     </ br>
+   <% end %>  
+  </ul>
+</div>

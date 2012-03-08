@@ -1,0 +1,8 @@
+<div class="inner message box">
+       <%= simple_form_for @message, :method => :post, :url => user_messeges_path(@user), :method => :post do |f| %>
+          <%= f.input :content, :label => "留言" %>
+          <%= f.button :submit, "留言",:class => "uibutton large confirm"%>
+        <% end %>
+</div>
+
+

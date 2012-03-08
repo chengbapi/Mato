@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <%=content_tag 'title',"马头网|注册"%>
+  <%= stylesheet_link_tag    "sign_up" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+  <meta name="description" content="注册"/>
+</head>
+<body>
+  <div class="topbar">
+        <h1>
+          <a href="/"> 马头网</a>
+        </h1>
+        <h2 id="second-title">10秒钟找到你的所有朋友</h2>
+      <h6 id="been-user">
+        已经有马头网账号了，点击 <%= link_to "登录",new_session_path('user') %>
+      <h6>
+  </div>
+<h3>免费注册马头网</h3>
+<%= simple_form_for @user, :url => registration_path('user') do |f| %>
+  <%= devise_error_messages! %>
+    <%= f.input :email, :label => "注册邮箱:"  %>
+    <%= f.input :password, :label => "创建密码:", :hint => "由6-30个字母，数字，下划线组成。" %>
+    <%= f.input :password_confirmation, :label => "密码确认:", :hint => "确认你的密码." %>
+    <%= f.input :name, :label => "真实姓名:", :hint => "输入你的真实姓名", :placeholder => '马头', :input_html => {:maxlength => 8 }  %>
+    <%=f.input :gender, :collection => [:male, :female]%>
+    <%= f.input :identity, :label => "选择你的身份" do %>
+      <%= f.select :identity, Identity.categories %>
+    <% end %>
+
+    <%= f.input :birthday, :as => :date, :start_year => Date.today.year - 30,
+                              :end_year => Date.today.year - 7,
+                              :order => [ :year,:month,:day],:label => "出生日期:" %>
+
+   <%= f.submit "提交" %>
+<% end %>
+
+</body>
+</html>

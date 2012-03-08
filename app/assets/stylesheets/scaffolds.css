@@ -1,0 +1,53 @@
+/*addition*/
+/*frame*/
+*{padding:0px;margin:0px;}\
+*:focus{ outline:0px;}/*取出focus时的虚线框*/
+body {width:1000px; margin:0 auto;color:#000;
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 18px;}
+  a {text-decoration:none;}
+ 
+ 
+/*topbar*/
+div.topbar{ height:36px; background:#005eac; margin:0px;}
+
+#topbar_logo{ float:left; margin:10px 0 0 10px;}
+div.topbar h3 a{color:#fff}
+
+#user_nav{ float:right;}
+div.topbar ul{ list-style-type:none; float:left;}
+div.topbar li{ float:left; color:#fff; }
+div.topbar li a{ color:#fff;display:block; padding:10px 7px 8px 7px;}
+div.topbar li a:hover{ color:#fff; background:#3878b5;}
+
+
+/*content-new*/
+div.log_in{ background:#f0f5f8; padding:15px 10px; float:left; position:relative; margin:10px 0 0 40px;
+			outline:1px #a4d8ff solid; z-index:2; font-size:14px;}
+div#new_ads{ position:relative; margin:10px  0 0 0px; padding:10px 0px 10px 300px;}
+div#new_ads #for_advertisement{ height:200px; width:600px; background:#ddd; position:relative;}
+div#new_ads #brief_intro{margin:20px 0px 0px 50px;}
+
+
+/*content-news*/
+#news_left {  float:left;padding:0px; width:160px;}
+#news_left li{ list-style:none; }
+#news_left li a{ display:block; color:black; padding:6px; font-size:12px; height:16px;}
+#news_left li a:hover{ background:#a4d8ff;}
+#news_left li a.selected{ color:white; font-weight:bolder;}
+
+
+
+#news_middle{ background:yellow; float:left;border-left:#a4d8ff 1px solid; width:560px; padding:12px 20px 0px 20px}
+#news_right{ background:green; float:left; width:239px;}
+
+/*content-show*/
+#show_left { }
+#show_middle{ }
+#show_right{ }
+
+
+
+/*footer*/
+#footer { border-top:1px solid #a4d8ff; clear:both; margin-top:30px;}

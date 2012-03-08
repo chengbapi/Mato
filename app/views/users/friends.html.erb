@@ -1,0 +1,36 @@
+<%= render :partial => "base" %>
+<div id="friends">
+  <div id="pending friends">
+    <% if is_current_user? %>
+      
+    <h4>邀请中的好友</h4>
+    <ul>
+      
+    <% @pending_friends.each do |f1| %>
+        <li><%= user_tag(f1) %></li>
+    <% end %>
+    </ul>
+  </div>
+  <div id="requested friends">
+    <h4>接受到的请求</h4>
+    <ul>
+      
+    <% @requested_friends.each do |f1| %>
+      <li><%= user_tag(f1) %></li>
+      <li><%= link_to("接受",accept_friendships_path(:friend_id => f1.id),:method => :put)  %></li>
+    <% end %>
+    </ul>
+  </div>
+    <% end %>
+
+  <div id="true friends">
+       
+    <h4>好友</h4>
+
+    <% @friends.each do |f1| %>
+      <li><%= user_tag(f1) %></li>
+    <% end %>
+    </ul>
+  </div>
+  
+</div>

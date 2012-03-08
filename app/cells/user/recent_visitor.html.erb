@@ -1,0 +1,14 @@
+<div class="recent_visitor">
+  <h4>最近来访 </h4>
+  <p>
+    总共来访人数 <%= @visitors.count %> 人
+  </p>
+  <ul>
+    <% @visitors.each do |record| %>
+      <li><%= user_tag(record.user) %></li>
+      <li>访问时间 <%= record.updated_at %></li>
+      <% end %>
+  </ul>
+  
+
+</div>

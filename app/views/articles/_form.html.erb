@@ -1,0 +1,25 @@
+<%= form_for([@user,@article]) do |f| %>
+  <% if @article.errors.any? %>
+    <ul>
+    <% @article.errors.full_messages.each do |e|%>
+      <li><strong><%= e %></strong></li>
+    <% end %>  
+     </ul>
+  <% end %>
+
+  <div class="inputs">
+    <p>
+      
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+    </p>
+    <%= f.label :content %>
+    <p>
+    <%= f.text_area :content %>
+    </p>
+  </div>
+
+  <div class="actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

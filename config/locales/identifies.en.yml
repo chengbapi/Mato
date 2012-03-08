@@ -1,0 +1,9 @@
+#coding: utf-8
+en:
+   identity_categories:
+      other : "其他工作"
+      university : "大学生"
+      working : "在工作"
+      highschool : "高中生"
+      juniorschool : "初中生"
+

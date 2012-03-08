@@ -1,0 +1,11 @@
+<%= render :partial => "base" %>
+<div id="notification" class = "box" >
+  <% @notifications.each do |notice| %>
+    <ul id="notice list">
+      <li><%= notice.content%></li>
+      <li> <%= show_notification(notice) %> </li>
+      <%= content_tag("li","<h6>未阅读</h6>") if not notice.read %>
+      </ br>
+    </ul>
+ <% end %>
+</div>

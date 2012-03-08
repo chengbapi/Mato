@@ -1,0 +1,21 @@
+defaults: &defaults
+   identity_categories:
+
+
+
+
+
+      other : 0
+      working : 1
+      university : 2
+      highschool: 3
+      juniorschool: 4
+development:
+  <<: *defaults
+
+test:
+  <<: *defaults
+
+production:
+  <<: *defaults
+

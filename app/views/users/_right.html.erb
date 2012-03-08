@@ -1,0 +1,4 @@
+<% if is_current_user? %>
+  <%= render_cell :user , :recent_visitor, :user => current_user %>
+  <%= render_cell :user , :recommended_users, :current_user => current_user %>
+<% end %>

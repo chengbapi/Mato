@@ -1,0 +1,18 @@
+<div class="log_in">
+<%= form_for :user,:url => user_session_path do |f| %>
+  <%= show_flash %>
+   <div><%= f.label "账号:" %><br />
+  <%= f.email_field :email %></div>
+  <div><%= f.label "密码:" %><br />
+    <%= f.password_field :password %></div><br />
+
+  <% if devise_mapping.rememberable? -%>
+    <div><%= f.check_box :remember_me %> <br />
+	<%= f.label "下次自动登录" %></div><br />
+  <% end -%>
+
+  <div><%= f.button "登录马头网",:class => "uibutton confirm" %></div><br />
+<% end %>
+  <%= button_to "立即注册帐号",new_registration_path('user'),:class => "uibutton special",:method=>:get %><br />
+  <%= button_to "忘记密码？", new_password_path('user'), :class => "uibutton" %>
+</div>

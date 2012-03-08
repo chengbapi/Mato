@@ -1,0 +1,17 @@
+<div id="recommended user" class="right box">
+  <h2 id="recommend">推荐好友</h2>
+  <ul class="out recommend">
+    <% @recommended_users.each do |user| %>
+      <li>
+           <ul class="inside recommend">
+             <li><%= user.name  %></li>
+             <li>
+                <%= button_to "加为好友",friendships_path(:friend_id => user.id),
+                  :class => "uibutton icon add"%>
+             </li>
+             <li><%= button_to "查看资料",user_path(user),:class => "uibutton icon next",:method => :get %></li>
+      </ul>
+         <% end %>
+  </ul>
+
+</div>

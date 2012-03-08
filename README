@@ -1,0 +1,54 @@
+这是一个自己参考着ruby-chin写的山寨版本的人人。你可以这么做来把它跑起来：
+ubuntu环境下：
+$ sudo apt-get install wget vim build-essential openssl libreadline6
+libreadline6-dev curl git-core zlib1g zlib1g-dev libssl-dev libyaml-
+dev libxml2-dev libxslt-dev autoconf automake libtool imagemagick
+libpcre3-dev
+
+$ sudo apt-get install mysql-server libmysqlclient-dev
+安装必备库
+
+$ bash -s stable < <(curl -s https://raw.github.com/wayneeseguin/rvm/master/binscripts/rvm-installer)
+
+安装rvm
+
+$ echo '[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
+# Load RVM function' >> ~/.bash_profile
+source ~/.bash_profile
+
+更新环境变量
+
+
+$ rvm install 1.9.3
+
+安装ruby 1.93
+
+$ rvm use 1.9.3 --default
+
+设置成默认
+
+$rvm gemset create rails321
+$rvm use 1.9.3@rails321
+
+设置一个gems集
+
+$gem install bundler rails
+
+安装rails 和ruby的包管理 bundler
+
+2.配置文件
+
+git clone git@github.com:Tassandar/rubychina-study.git
+
+vim config/database.yml
+修改你的密码
+
+bundle install
+
+rake db:create
+
+rake db:migrate
+
+3. run
+rails s
+1.安装配置ror环境

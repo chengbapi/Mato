@@ -1,0 +1,8 @@
+<%= simple_form_for @news, :method => :post, :url => create_news_path do |f| %>
+        <%= f.input :content, :label => "新鲜事：" %>
+        <%= f.button :submit, "发布",:class => "uibutton large confirm"%>
+      <% end %>
+      <p>
+        <%= show_last_news%>
+      </p>
+
