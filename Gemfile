@@ -22,13 +22,13 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
-#group :test do
-#  gem 'capybara'
-#  gem 'rspec-rails'
-#  gem "autotest-rails"  #与ZenTest一起实现自动化测试
-#  gem "ZenTest"
-#  gem 'factory_girl_rails'
-#end
+group :test do
+ gem 'capybara'
+ gem 'rspec-rails'
+ gem "autotest-rails"  #与ZenTest一起实现自动化测试
+ gem "ZenTest"
+ gem 'factory_girl_rails'
+end
 
 gem 'carrierwave'
 gem 'jquery-rails'

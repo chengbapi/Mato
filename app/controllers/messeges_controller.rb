@@ -1,6 +1,6 @@
 #coding: utf-8
 class MessegesController < ApplicationController
-  before_filter :require_user
+  before_filter :require_user!
 
    def index
      @user = User.find(params[:user_id])

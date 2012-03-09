@@ -1,7 +1,7 @@
 #coding: utf-8
 class NotificationsController < ApplicationController
 
-  before_filter :require_user
+  before_filter :require_user!
   def index
     @notifications = current_user.notifications
     @notifications.each do |notice|

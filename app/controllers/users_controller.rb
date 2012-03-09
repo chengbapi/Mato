@@ -1,5 +1,6 @@
 #coding: utf-8
 class UsersController < ApplicationController
+  before_filter :require_user!
   def show
     @user = User.find(params[:id])
     @news = News.new
@@ -16,15 +17,15 @@ class UsersController < ApplicationController
     @pending_friends = @user.pending_friends
     @requested_friends = @user.requested_friends
 
-     set_page_attribute("我的好友","好友")
+    set_page_attribute("我的好友","好友")
 
   end
 
-  def news
-    #这个news是个人主页下的news
-    @user = User.find(params[:id])
-    @news = @user.news
-  end
+#  def news
+#    #这个news是个人主页下的news
+#    @user = User.find(params[:id])
+#    @news = @user.news
+#  end
 
   def home
     #这里的news是首页里面的news

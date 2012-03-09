@@ -40,7 +40,7 @@ div#new_ads #brief_intro{margin:20px 0px 0px 50px;}
 
 
 #home_middle{ background:yellow; float:left;border-left:#a4d8ff 1px solid; width:560px; padding:12px 20px 0px 20px}
-#home_right{ background:green; float:left; width:239px;}
+#home_right{ background:green; float:right; width:239px;}
 
 /*content-show*/
 #show_left { }

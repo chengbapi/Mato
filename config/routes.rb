@@ -25,7 +25,7 @@ SimpleFacebookTest::Application.routes.draw do
 
 
   match 'news/create' => 'news#create' , :as => :create_news 
-
+  match 'about_us' => 'home#about_us', :as => :about_us
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
