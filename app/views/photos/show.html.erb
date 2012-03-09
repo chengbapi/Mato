@@ -1,0 +1,13 @@
+<div id="photo">
+  <div class="photo_name">
+   <h3><%= @photo.name %></h3>
+  </div>
+  <div class="photo_image">
+   <%= image_tag @photo.image_url(:thumb).to_s %>
+
+   <%= image_tag @photo.image_url(:photo).to_s %>
+  </div>
+  <div class="photo_description">
+    <%= @photo.description %>
+  </div>
+</div>

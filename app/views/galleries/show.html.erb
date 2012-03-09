@@ -1,0 +1,21 @@
+<h1 id="xiangce"><%= @gallery.name %></h1>
+<p>
+<%= @gallery.description %>
+</p>
+<div id="photos">
+  <% for photo in @gallery.photos %>
+    <div class="photo">
+      <div class="name">
+        <%= photo.name %>
+      </div>
+      <div class="photo_action">
+        <%= link_to "删除照片", gallery_photo(@gallery,photo)%>
+      </div>
+    </div>
+  <% end %>
+  <div id="gallery_action">
+    <%= link_to "新增照片",new_gallery_photo_path(@gallery) %>
+    <%= link_to "编辑相册",edit_gallery_path(@gallery) %>
+    <%= link_to "删除相册",@gallery ,:method => :delete %>
+  </div>
+</div>

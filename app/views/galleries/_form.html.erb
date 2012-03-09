@@ -1,0 +1,23 @@
+<%= form_for @gallery do |f| %>
+  <ul>
+    <% @gallery.errors.full_messages.each do |e|%>
+      <li><strong><%= e %></strong></li>
+    <% end %>  
+  </ul>
+
+  <div class="inputs">
+    <p>
+      
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+    </p>
+    <%= f.label :description %>
+    <p>
+    <%= f.text_area :description %>
+    </p>
+  </div>
+
+  <div class="actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

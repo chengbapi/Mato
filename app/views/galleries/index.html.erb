@@ -1,0 +1,9 @@
+<h1 id="gallery">相册 </h1>
+<% @galleries.each do |gallery| %>
+  <p>
+     <h3><%= link_to gallery.name, gallery %></h3>
+  </p>
+<% end %>
+<p>
+  <%= link_to "新建相册",new_gallery_path %>
+</p>
