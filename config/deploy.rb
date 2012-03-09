@@ -1,8 +1,8 @@
 set :application, "renren_demo"
-set :repository,  "git@github.com:Tassandar/rubychina-study.git"
+set :repository,  "git@github.com:Tassandar/Mato.git"
 set :domain, "58.215.184.61"
 set :deploy_env, "production"
-set :rails_enva, "production"
+set :rails_env, "production"
 set :scm, :git
 set :branch , "master"
 set :deploy_to , "/home/deploy/renren"
