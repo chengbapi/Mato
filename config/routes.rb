@@ -19,6 +19,10 @@ SimpleFacebookTest::Application.routes.draw do
   resources :notifications, :only => [:destroy,:index]
 
 
+  resources :galleries do
+    resources :photos ,:except => [:update ,:index]
+  end
+
 
   match 'news/create' => 'news#create' , :as => :create_news 
 

@@ -173,5 +173,7 @@ class User < ActiveRecord::Base
   
   #article
   has_many :articles
+  has_many :galleries
+  has_many :photos, :through => :galleries
 
 end

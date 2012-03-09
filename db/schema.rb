@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120302063406) do
+ActiveRecord::Schema.define(:version => 20120309045806) do
 
   create_table "articles", :force => true do |t|
     t.string   "title"
@@ -29,6 +29,14 @@ ActiveRecord::Schema.define(:version => 20120302063406) do
     t.boolean  "approved",   :default => false
     t.integer  "blocked_id"
     t.boolean  "blocked",    :default => false
+  end
+
+  create_table "galleries", :force => true do |t|
+    t.string   "user_id"
+    t.string   "name"
+    t.string   "description"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   create_table "messeges", :force => true do |t|
@@ -53,6 +61,17 @@ ActiveRecord::Schema.define(:version => 20120302063406) do
     t.datetime "updated_at",                    :null => false
     t.string   "content"
     t.integer  "send_id"
+  end
+
+  create_table "photos", :force => true do |t|
+    t.string   "name"
+    t.string   "image"
+    t.string   "description"
+    t.integer  "comment_count",    :default => 0
+    t.integer  "gallery_id"
+    t.datetime "created_at",                      :null => false
+    t.datetime "updated_at",                      :null => false
+    t.string   "remote_image_url"
   end
 
   create_table "replies", :force => true do |t|
