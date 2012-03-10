@@ -5,9 +5,11 @@ SimpleFacebookTest::Application.routes.draw do
   resources :users, :only => [:show] do
     resources :messeges, :only => [:create, :index, :destroy]
     resources :articles
+    resources :galleries 
     member do
       get :friends
       get :home 
+      get :upload ,:action => 'upload' ,:controller => 'galleries', :as => :upload
     end
   end
   resources :friendships, :only => [:create, :destroy] do 
@@ -19,9 +21,7 @@ SimpleFacebookTest::Application.routes.draw do
   resources :notifications, :only => [:destroy,:index]
 
 
-  resources :galleries do
-    resources :photos ,:except => [:update ,:index]
-  end
+    resources :photos ,:except => [:index, :new ]
 
 
   match 'news/create' => 'news#create' , :as => :create_news 

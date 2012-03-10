@@ -1,20 +1,19 @@
 
 <div class="log_in">
-  
-<%= form_for :user,:url => user_session_path do |f| %>
-    <%= render :partial => "shared/flash", 
-      :locals => {:flash => flash} %>
-   <div><%= f.label "账号:" %><br />
-  <%= f.email_field :email %></div>
-  <div><%= f.label "密码:" %><br />
-    <%= f.password_field :password %></div><br />
-  <% if devise_mapping.rememberable? -%>
-    <div><%= f.check_box :remember_me %> <%= f.label "下次自动登录" %></div><br />
-  <% end -%>
-  <div><%= f.button "登录马头网",:class => "uibutton confirm" %></div><br />
-<% end %>
-<%= button_to "立即注册帐号",new_user_registration_path,:class => "uibutton special",:method => :get %><br />
-<%= button_to "忘记密码？", new_password_path('user'), :class => "uibutton", :method => :get %>
+  <%= form_for :user,:url => user_session_path do |f| %>
+      <%= render :partial => "shared/flash", 
+        :locals => {:flash => flash} %>
+     <div><%= f.label "账号:" %><br />
+    <%= f.email_field :email %></div>
+    <div><%= f.label "密码:" %><br />
+      <%= f.password_field :password %></div><br />
+    <% if devise_mapping.rememberable? -%>
+      <div><%= f.check_box :remember_me %> <%= f.label "下次自动登录" %></div><br />
+    <% end -%>
+    <div><%= f.button "登录马头网",:class => "uibutton confirm" %></div><br />
+  <% end %>
+  <%= button_to "立即注册帐号",new_user_registration_path,:class => "uibutton special",:method => :get %><br />
+  <%= button_to "忘记密码？", new_password_path('user'), :class => "uibutton", :method => :get %>
 </div>
 <div id="new_ads">
   <div id="for_advertisement">

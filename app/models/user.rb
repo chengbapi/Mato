@@ -173,7 +173,7 @@ class User < ActiveRecord::Base
   
   #article
   has_many :articles
-  has_many :galleries
-  has_many :photos, :through => :galleries
+  has_many :galleries ,:dependent => :destroy
+  has_many :photos , :dependent => :destroy
 
 end

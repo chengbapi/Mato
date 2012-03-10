@@ -1,9 +1,11 @@
-<h1 id="gallery">相册 </h1>
-<% @galleries.each do |gallery| %>
+<% if is_current_user? %>
+  <%= render :partial => "users/home_left_sidebar" %>
+  <%= render 'user_galleries' %>
   <p>
-     <h3><%= link_to gallery.name, gallery %></h3>
+   <%= link_to "新建相册",new_user_gallery_path(@user) %>
   </p>
+<% else %>
+  <%= render "users/individual_show_nav" %>
+  <%= render :partial => "individual_galleries" %>
 <% end %>
-<p>
-  <%= link_to "新建相册",new_gallery_path %>
-</p>
+

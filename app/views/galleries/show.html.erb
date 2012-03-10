@@ -8,14 +8,16 @@
       <div class="name">
         <%= photo.name %>
       </div>
+      <div class="image">
+        <%= link_to(image_tag(photo.image_url(:thumb).to_s),photo_path(photo)) %>
+      </div>
       <div class="photo_action">
-        <%= link_to "删除照片", gallery_photo(@gallery,photo)%>
+        <%= link_to "删除照片", photo_path(photo), :method => :destroy%>
       </div>
     </div>
   <% end %>
   <div id="gallery_action">
-    <%= link_to "新增照片",new_gallery_photo_path(@gallery) %>
-    <%= link_to "编辑相册",edit_gallery_path(@gallery) %>
-    <%= link_to "删除相册",@gallery ,:method => :delete %>
+    <%= link_to "新增照片",upload_user_path(current_user) %>
+    <%= link_to "删除相册", [@user,@gallery] ,:method => :delete %>
   </div>
 </div>

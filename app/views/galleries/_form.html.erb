@@ -1,4 +1,4 @@
-<%= form_for @gallery do |f| %>
+<%= form_for [@user,@gallery] do |f| %>
   <ul>
     <% @gallery.errors.full_messages.each do |e|%>
       <li><strong><%= e %></strong></li>

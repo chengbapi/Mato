@@ -8,7 +8,7 @@
          <li><%= link_to("新鲜事",home_user_path(@user)) %></li>
          <li><%= link_to("日志",user_articles_path(@user)) %></li>
          <li><%= link_to("留言",user_messeges_path(@user)) %></li>
-         <li><%= link_to("相册",galleries_path(:user_id => @user.id))%></li>
+         <li><%= link_to("相册",user_galleries_path(@user))%></li>
       </ul> 
     </div>
     <div id="class_second">

@@ -1,5 +1,6 @@
+#coding: utf-8
 class GalleriesController < ApplicationController
-  before_filter :require_friends_or_self!
+  before_filter :require_friends_or_self! ,:except => :upload
   def show
     @gallery = @user.galleries.find(params[:id]) 
   end
@@ -30,6 +31,12 @@ class GalleriesController < ApplicationController
    redirect_to :action => :index
   end
 
+  def upload
+    @user = User.find(params[:id])
+    @photo = Photo.new(:gallery_id => 0,:user_id => @user.id)
+    @album_array = @user.galleries.all.collect { |g| [g.name,g.id]}.push(["新建相册#{Time.now}",0])
+    @gallery = Gallery.new
+  end
   private
 
   def require_friends_or_self!
