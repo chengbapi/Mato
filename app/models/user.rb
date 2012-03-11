@@ -173,7 +173,12 @@ class User < ActiveRecord::Base
   
   #article
   has_many :articles
-  has_many :galleries ,:dependent => :destroy
+  #gallery & photo & avatar
+  has_many :galleries ,:dependent => :destroy ,:conditions => ['avatar_gallery = ?' ,false]
+  has_one :avatar_gallery,:class_name => 'Gallery', :dependent => :destroy, :conditions => ['avatar_gallery = ?',true]
   has_many :photos , :dependent => :destroy
+
+  attr_accessor :crop_x, :crop_y, :crop_w, :crop_h
+  mount_uploader :avatar , AvatarUploader
 
 end

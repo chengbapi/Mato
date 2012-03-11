@@ -1,11 +1,16 @@
-<% if is_current_user? %>
-  <%= render :partial => "users/home_left_sidebar" %>
-  <%= render 'user_galleries' %>
-  <p>
-   <%= link_to "新建相册",new_user_gallery_path(@user) %>
-  </p>
-<% else %>
-  <%= render "users/individual_show_nav" %>
-  <%= render :partial => "individual_galleries" %>
-<% end %>
+
+<%# render :partial => "bread_crumb" %>
+<div id="gallery_nav_bar">
+    <%= link_to "上传照片",upload_user_path(@user.id) ,:class => "upload_button", :method => :get %>
+  一共有<%= @user.galleries.count %>个相册 
+  全部相册
+  最近照片  
+</div>
+<%= render "users/home_left_sidebar" if is_current_user?  %>
+<div id="each_gallery">
+  <% @galleries.each do |gallery| %>
+    <p> <h3><%= link_to gallery.name, [@user,gallery] %></h3> </p>
+  <% end %>
+</div>
+
 

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120309181601) do
+ActiveRecord::Schema.define(:version => 20120311051335) do
 
   create_table "articles", :force => true do |t|
     t.string   "title"
@@ -35,8 +35,9 @@ ActiveRecord::Schema.define(:version => 20120309181601) do
     t.string   "user_id"
     t.string   "name"
     t.string   "description"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",                        :null => false
+    t.datetime "updated_at",                        :null => false
+    t.boolean  "avatar_gallery", :default => false
   end
 
   create_table "messeges", :force => true do |t|
@@ -73,6 +74,7 @@ ActiveRecord::Schema.define(:version => 20120309181601) do
     t.datetime "updated_at",                      :null => false
     t.string   "remote_image_url"
     t.integer  "user_id"
+    t.boolean  "is_avatar"
   end
 
   create_table "replies", :force => true do |t|

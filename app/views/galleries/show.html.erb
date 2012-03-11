@@ -1,23 +1,27 @@
-<h1 id="xiangce"><%= @gallery.name %></h1>
-<p>
-<%= @gallery.description %>
-</p>
+<%# render :partial => "bread_crumb" %>
+<% if is_current_user? %>
+  <div id="user_edit_photo_bar">
+  <div class="upload_photo_button">
+    <%= link_to "上传照片",upload_user_path(@user.id,:fast_upload => @gallery.id) ,:class => "upload_button", :method => :get %>
+  </div>
+    <div class="photo_action">
+      <ul>
+      <li><%= link_to "编辑" , edit_user_gallery_path(@user.id,@gallery.id) %> </li>
+      <li><%= link_to "删除相册", [@user,@gallery] ,:method => :delete %></li> 
+      </ul>
+    </div>
+  </div> 
+<% end %>
+<div id="gallery_title">
+  <p> <%= @gallery.name %> </p>
+  <p> 共有  <%=@gallery.photos.count %> 张照片 </p>
+  <p> <%= @gallery.description %> </p>
+</div>
 <div id="photos">
   <% for photo in @gallery.photos %>
-    <div class="photo">
-      <div class="name">
-        <%= photo.name %>
-      </div>
-      <div class="image">
-        <%= link_to(image_tag(photo.image_url(:thumb).to_s),photo_path(photo)) %>
-      </div>
-      <div class="photo_action">
-        <%= link_to "删除照片", photo_path(photo), :method => :destroy%>
-      </div>
+    <div class="image">
+      <%= link_to(image_tag(photo.image_url(:thumb).to_s),photo_path(photo)) %>
     </div>
   <% end %>
-  <div id="gallery_action">
-    <%= link_to "新增照片",upload_user_path(current_user) %>
-    <%= link_to "删除相册", [@user,@gallery] ,:method => :delete %>
-  </div>
 </div>
+

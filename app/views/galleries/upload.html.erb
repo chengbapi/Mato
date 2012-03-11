@@ -1,0 +1,24 @@
+<div class="upload_gallery"> 
+  <%= form_for @photo ,:url => { :action => :create ,:controller => :photos } do |f| %>
+    上传到
+    <%= f.select :gallery_id, @album_array %>
+  <p>
+    <%=  f.file_field :image%>
+  </p>
+  <%= f.hidden_field :user_id %>
+  <p>
+    <%= f.label "照片标题" %>
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label "描述照片" %>
+    <%= f.text_area :description ,:size => "40x10"%>
+  </p>
+  <p>
+    <%= f.submit "上传" %>
+  </p>
+  <% end %>
+</div>
+<div id="new_gallery_button">
+  <%= link_to "新相册" , new_user_gallery_path(@user) %>
+</div>

@@ -10,6 +10,7 @@ SimpleFacebookTest::Application.routes.draw do
       get :friends
       get :home 
       get :upload ,:action => 'upload' ,:controller => 'galleries', :as => :upload
+      get :avatar_gallery , :action => 'avatar_gallery', :controller => 'galleries' ,:as => :avatar_gallery
     end
   end
   resources :friendships, :only => [:create, :destroy] do 
@@ -21,9 +22,9 @@ SimpleFacebookTest::Application.routes.draw do
   resources :notifications, :only => [:destroy,:index]
 
 
-    resources :photos ,:except => [:index, :new ]
-
-
+  resources :photos ,:only => [:show, :destroy ,:create]
+  
+  match 'avatar/:user_id' => 'photos#crop' , :as => :avatar_crop
   match 'news/create' => 'news#create' , :as => :create_news 
   match 'about_us' => 'home#about_us', :as => :about_us
 

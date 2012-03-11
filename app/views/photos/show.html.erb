@@ -1,12 +1,16 @@
-<div id="photo">
+<% if is_current_user? %>
+  <%= link_to "删除照片", photo_path(@photo,:user_id => @user.id ,:gallery_id => @photo.gallery.id), :method => :delete %>
+    当作头像
+<% end %>
+<div id="photo_show">
   <div class="photo_name">
    <h3><%= @photo.name %></h3>
   </div>
   <div class="photo_image">
-
    <%= image_tag @photo.image_url(:photo).to_s %>
   </div>
   <div class="photo_description">
     <%= @photo.description %>
   </div>
 </div>
+
