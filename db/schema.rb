@@ -74,7 +74,6 @@ ActiveRecord::Schema.define(:version => 20120311051335) do
     t.datetime "updated_at",                      :null => false
     t.string   "remote_image_url"
     t.integer  "user_id"
-    t.boolean  "is_avatar"
   end
 
   create_table "replies", :force => true do |t|
