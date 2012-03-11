@@ -2,7 +2,7 @@ SimpleFacebookTest::Application.routes.draw do
 
   devise_for :users, :controllers => { :registrations => "registrations"}
   root :to => "home#index"
-  resources :users, :only => [:show] do
+  resources :users, :only => [:show,:update] do
     resources :messeges, :only => [:create, :index, :destroy]
     resources :articles
     resources :galleries 
@@ -11,6 +11,7 @@ SimpleFacebookTest::Application.routes.draw do
       get :home 
       get :upload ,:action => 'upload' ,:controller => 'galleries', :as => :upload
       get :avatar_gallery , :action => 'avatar_gallery', :controller => 'galleries' ,:as => :avatar_gallery
+      get :profile
     end
   end
   resources :friendships, :only => [:create, :destroy] do 

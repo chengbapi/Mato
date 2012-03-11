@@ -7,6 +7,15 @@
           aspectRatio: 1
           });})
     function update_crop(coords) {
+      var rx = 100/coords.w;
+      var ry = 100/coords.h;
+      $("#preview").css({
+                    width: Math.round(rx * 600) + 'px',
+                    height: Math.round(ry * 600) + 'px',
+                    marginLeft: '-' + Math.round(rx * coords.x) + 'px',
+                    marginTop: '-' + Math.round(ry * coords.y) + 'px'
+          });
+      
       $("#crop_x").val(coords.x);
       $("#crop_y").val(coords.y);
       $("#crop_w").val(coords.w);
@@ -14,6 +23,11 @@
     }
   </script>
 <% end %>
+  
+<h4> 预览 </h4>
+<div style="width:100px; height:100px; overflow:hidden" id="avatar_preview" >
+  <%= image_tag @photo.image_url(:photo).to_s , :id => "preview"  %>
+</div>
 <%= image_tag @photo.image_url(:photo).to_s , :id => "cropbox"  %>
 <%= form_for @user do |f| %>
   <% for item in [:crop_x,:crop_y,:crop_w,:crop_h] %>

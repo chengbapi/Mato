@@ -11,6 +11,12 @@ class UsersController < ApplicationController
      set_page_attribute(@user.name,"个人主页")
   end
 
+  def update
+    @user = User.find(params[:id])
+    @
+    
+  end
+
   def friends
     @user = User.find(params[:id])
     @friends = @user.friends
